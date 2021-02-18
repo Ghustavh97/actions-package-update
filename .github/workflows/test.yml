@@ -1,5 +1,5 @@
 on: push
-name: Update
+name: Test Update
 jobs:
   package-update:
     runs-on: ubuntu-latest
