@@ -22,6 +22,9 @@ COPY env.sh /env.sh
 COPY entrypoint.sh /entrypoint.sh
 COPY ${GITHUB_WORKSPACE}/ /${GITHUB_WORKSPACE}/
 
+RUN echo ${GITHUB_WORKSPACE}
+RUN ls -a
+
 RUN ["chmod", "+x", "/entrypoint.sh"]
 
 ENTRYPOINT ["/entrypoint.sh"]
