@@ -13,7 +13,7 @@ cd ${GITHUB_WORKSPACE}
 # copy the files we will need to build the main/original docker container
 cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
-# cp --recursive ${GITHUB_WORKSPACE}/ repository
+cp --recursive ${GITHUB_WORKSPACE}/ repository
 
 # cd ${GITHUB_WORKSPACE}
 
@@ -28,4 +28,4 @@ sed -i '1s/^/\#\!\/bin\/sh -l\n/' env.sh
 # here we can make the construction of the image as customizable as we need
 # and if we need parameterizable values it is a matter of sending them as inputs
 # pass ${INPUT_ARGS} to docker run to match what github actions does to the original docker run command
-docker build -t actions-package-update --build-arg SET_NODE_VERSION="$SET_NODE_VERSION" --build-arg GITHUB_WORKSPACE="$GITHUB_WORKSPACE" . && docker run actions-package-update -v "${GITHUB_WORKSPACE}":"${GITHUB_WORKSPACE}" ${INPUT_ARGS}
+docker build -t actions-package-update --build-arg SET_NODE_VERSION="$SET_NODE_VERSION" --build-arg GITHUB_WORKSPACE="$GITHUB_WORKSPACE" . && docker run actions-package-update ${INPUT_ARGS}

@@ -17,7 +17,7 @@ chmod +x /this_env.sh
 ls -a
 
 
-cd ${GITHUB_WORKSPACE}
+cd repository
 
 ls -a
 
