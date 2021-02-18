@@ -8,4 +8,4 @@
 # we need these files for node version control or build arguments
 !entrypoint.sh
 !docker
-!/github
+!github
