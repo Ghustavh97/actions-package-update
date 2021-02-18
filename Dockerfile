@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Copy files from the action repository to the filesystem path `/` of the container
-# COPY . /actions-package-update
+COPY . ${GITHUB_WORKSPACE}
 COPY entrypoint.sh /entrypoint.sh
 
 RUN apk add --update --no-cache docker

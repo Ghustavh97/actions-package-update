@@ -20,6 +20,7 @@ RUN yarn global add actions-package-update
 
 # copy files from the action repository to the filesystem path `/` of the container
 COPY env.sh /env.sh
+COPY . ${GITHUB_WORKSPACE}
 COPY entrypoint.sh /entrypoint.sh
 # COPY repository/ /repository
 
