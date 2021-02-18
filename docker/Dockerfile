@@ -18,13 +18,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends -y git
 RUN yarn global add npm-check-updates
 RUN yarn global add actions-package-update
 
+RUN ls -a
+
 # copy files from the action repository to the filesystem path `/` of the container
 COPY env.sh /env.sh
 COPY . ${GITHUB_WORKSPACE}
 COPY entrypoint.sh /entrypoint.sh
 # COPY repository/ /repository
-
-RUN ls -a
 
 RUN ["chmod", "+x", "/entrypoint.sh"]
 
