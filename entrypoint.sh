@@ -11,8 +11,7 @@ cd /actions-package-update
 # copy the files we will need to build the main/original docker container
 cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
-
-rm -rf docker
+cp --recursive ${GITHUB_WORKSPACE}/ docker/${GITHUB_WORKSPACE}
 
 # copy this container's enviroment variables into env.sh so we can use them in the main container
 export -p >env.sh
