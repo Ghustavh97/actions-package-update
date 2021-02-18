@@ -14,7 +14,7 @@ chmod +x /this_env.sh
 . /env.sh
 . /this_env.sh
 
-cd /repository
+# cd /repository
 
 # ${INPUT_ARGS} are needed by ncu
 actions-package-update ${INPUT_ARGS}

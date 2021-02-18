@@ -6,14 +6,16 @@ SET_NODE_VERSION="${SET_NODE_VERSION:-latest}"
 
 echo "creating docker image running node version: $SET_NODE_VERSION"
 
-cd /actions-package-update
+# cd /actions-package-update
+
+cd ${GITHUB_WORKSPACE}
 
 # copy the files we will need to build the main/original docker container
 cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
-cp --recursive ${GITHUB_WORKSPACE}/ repository
+# cp --recursive ${GITHUB_WORKSPACE}/ repository
 
-cd ${GITHUB_WORKSPACE}
+# cd ${GITHUB_WORKSPACE}
 
 ls -a
 
