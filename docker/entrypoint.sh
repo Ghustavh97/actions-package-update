@@ -14,6 +14,9 @@ chmod +x /this_env.sh
 . /env.sh
 . /this_env.sh
 
+ls -a
+
+
 cd ${GITHUB_WORKSPACE}
 
 ls -a
