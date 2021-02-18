@@ -9,3 +9,4 @@
 !entrypoint.sh
 !docker
 !github/workspace/*
+!env.sh
