@@ -2,7 +2,7 @@
 
 # set SET_NODE_VERSION env variable to latest if not defined
 SET_NODE_VERSION="${SET_NODE_VERSION:-latest}"
-GITHUB_WORKSPACE="${GITHUB_WORKSPACE:-"/github/workspace"}"
+# GITHUB_WORKSPACE="${GITHUB_WORKSPACE:-"/github/workspace"}"
 
 echo "creating docker image running node version: $SET_NODE_VERSION"
 
