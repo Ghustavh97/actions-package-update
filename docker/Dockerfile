@@ -1,7 +1,8 @@
 # SET_NODE_VERSION default is set in ../entrypoint.sh
 ARG SET_NODE_VERSION
-ARG GITHUB_WORKSPACE
 FROM node:${SET_NODE_VERSION}
+
+ARG GITHUB_WORKSPACE
 
 LABEL version="0.11.0"
 LABEL repository="https://github.com/taichi/actions-package-update"
