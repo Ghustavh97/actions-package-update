@@ -11,7 +11,7 @@ cd /actions-package-update
 # copy the files we will need to build the main/original docker container
 cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
-# cp --recursive ${GITHUB_WORKSPACE}/ docker/${GITHUB_WORKSPACE}
+cp --recursive ${GITHUB_WORKSPACE}/ workspace
 
 ls -a
 
