@@ -13,6 +13,8 @@ cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
 # cp --recursive ${GITHUB_WORKSPACE}/ docker/${GITHUB_WORKSPACE}
 
+ls -a
+
 # copy this container's enviroment variables into env.sh so we can use them in the main container
 export -p >env.sh
 
