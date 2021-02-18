@@ -16,5 +16,7 @@ chmod +x /this_env.sh
 
 cd ${GITHUB_WORKSPACE}
 
+ls -a
+
 # ${INPUT_ARGS} are needed by ncu
 actions-package-update ${INPUT_ARGS}
