@@ -11,9 +11,6 @@ cd /actions-package-update
 cp docker/Dockerfile Dockerfile
 cp docker/entrypoint.sh entrypoint.sh
 
-# .git is used by actions-package-update to query the repo that needs to be updated
-cp --recursive ${GITHUB_WORKSPACE}/.git .git
-
 rm -rf docker
 
 # copy this container's enviroment variables into env.sh so we can use them in the main container
@@ -24,5 +21,6 @@ sed -i '1s/^/\#\!\/bin\/sh -l\n/' env.sh
 
 # here we can make the construction of the image as customizable as we need
 # and if we need parameterizable values it is a matter of sending them as inputs
+# ${GITHUB_WORKSPACE} is used by actions-package-update to query the repo that needs to be updated
 # pass ${INPUT_ARGS} to docker run to match what github actions does to the original docker run command
-docker build -t actions-package-update --build-arg SET_NODE_VERSION="$SET_NODE_VERSION" . && docker run actions-package-update ${INPUT_ARGS}
+docker build -t actions-package-update --build-arg GITHUB_WORKSPACE="$GITHUB_WORKSPACE" SET_NODE_VERSION="$SET_NODE_VERSION" . && docker run actions-package-update ${INPUT_ARGS}
